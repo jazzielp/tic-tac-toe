@@ -1,0 +1,11 @@
+# Archivo .editorconfig
+
+# Definir el estilo de tabulación y el tamaño
+[*]
+indent_style = space
+indent_size = 2
+
+# Insertar un espacio después de la palabra clave de la función y antes de los paréntesis
+[*.js]
+insert_final_newline = true
+trim_trailing_whitespace = true

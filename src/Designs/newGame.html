@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../index.css">
+    <title>Board</title>
+  </head>
+  <body>
+    <main>
+      <div class="icon-contaier">
+        <div class="icon-container__icon-x">
+          <img class="icon-container__icon" src="../assets/icon-x.svg" alt="Icon x">
+        </div>
+        <div class="icon__container__icon-x">
+          <img class="icon-container__icon" src="../assets/icon-o.svg" alt="Icon x">
+        </div>
+      </div>
+      <section class="choose-turn">
+        <h1 class="choose-turn__title">PICK PLAYER 1'S MARK</h1>
+        <div class="choose-turn__turn">
+          <button class="choose-turn__btn-inactive">
+            <span class="icon-active"></span>
+          </button>
+          <button class="choose-turn__btn-active">
+            <img class="turn__icon" src="../assets/icon-o.svg" alt="Turn o">
+          </button>
+        </div>
+        <p class="choose-turn__note">
+          REMEMBER : X GOES FIRST
+        </p>
+      </section>
+      <section class="choose-player">
+        <button class="button-long button-yellow">
+          NEW GAME (VS CPU)
+        </button>
+        <button class="button-long button-blue">
+          NEW GAME (VS PLAYER)
+        </button>
+      </section>
+    </main>
+  </body>
+</html>

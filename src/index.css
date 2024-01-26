@@ -179,9 +179,69 @@ main {
 }
 
 .button-content__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 8px;
   border: none;
-  box-shadow: 0px 4px 0px 0px rgba(168,191,201,1);
+  background-color: var(--Silver);
+  box-shadow: 0px 4px 0px 0px rgba(107,137,151,1);
+}
+
+.play__board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  width: 328px;
+  min-width:328px;
+}
+
+.board__squard {
+  width: 96px;
+  height: 96px;
+  background-color: var(--Semi-Dark-Navy);
+  box-shadow: 0px 4px 0px 0px rgba(16,33,42,1);
+  border-radius: 10px;
+}
+
+.board__player-one,
+.board__gamesplayed,
+.board__player-two{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  height: 64px;
+  border-radius: 10px;
+}
+
+.player-one__text,
+.gamesplayed__text,
+.player-two__text {
+  font-size: 1.6rem;
+  color: var(--Dark-Navy);
+}
+
+.player-one__score,
+.gamesplayed__score,
+.player-two__score {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--Dark-Navy);
+}
+
+.board__player-one {
+  background-color: var(--Light-Blue);
+}
+
+.board__gamesplayed{
+  background-color: var(--Silver);
+}
+
+.board__player-two{
+  background-color: var(--Light-Yellow);
 }

@@ -1,0 +1,20 @@
+.large-button {
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--Dark-Navy);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.large-button--yellow {
+  background-color: var(--Light-Yellow);
+  box-shadow: 0px 8px 0px 0px rgba(204,139,19,1);
+}
+
+.large-button--blue {
+  background-color: var(--Light-Blue);
+  box-shadow: 0px 8px 0px 0px rgba(17,140,135,1);
+}

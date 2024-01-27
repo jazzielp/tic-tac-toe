@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TURNS } from '../src/const/const'
-import { LargeButtonYellow } from './components/LargeButtonYellow'
+import { LargeButtonYellow } from './components/LargeButton'
 
 function App () {
   const [board, setBoard] = useState(() => {
@@ -13,7 +13,8 @@ function App () {
   })
   return (
     <>
-      <LargeButtonYellow text='Button 1' colorButton='yellow' />
+      <LargeButtonYellow text='Button 1' colorButton='yellow' widthFull={false} />
+      <LargeButtonYellow text='Button 2' colorButton='blue' widthFull />
     </>
   )
 }

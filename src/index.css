@@ -245,3 +245,69 @@ main {
 .board__player-two{
   background-color: var(--Light-Yellow);
 }
+
+.modal-win {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 375px;
+  margin: 0 auto;
+  background-color: var(--Dark-Navy);
+}
+
+.modal-win__title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--Silver);
+  margin: 16px 0;
+}
+
+.modal-win__who-win {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.modal-win__icon {
+  width: 30px;
+  height: 30px;
+}
+
+.modal-win__win {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--Light-Yellow);
+}
+
+.modal-win__buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-win__btn-1,
+.modal-win__btn-2 {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--Semi-Dark-Navy);
+}
+
+.modal-win__btn-1 {
+  background-color: var(--Silver);
+  box-shadow: 0px 4px 0px 0px rgba(107,137,151,1);
+}
+
+.modal-win__btn-2 {
+  background-color: var(--Light-Yellow);
+  box-shadow: 0px 4px 0px 0px rgba(204,139,19,1);
+}
+
+.modal-win__title--draw {
+  font-size: 2.4rem;
+}

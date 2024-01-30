@@ -1,5 +1,5 @@
 import React from 'react'
-import 'Turn.css'
+import './Index.css'
 
 export default function Turn () {
   return (

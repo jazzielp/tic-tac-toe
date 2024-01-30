@@ -1,12 +1,9 @@
 import React from 'react'
-import { Logo } from '../Icons/Icons'
 
-export default function IconGame () {
+export function IconGame () {
   return (
-    <>
-      <picture>
-        <img className='logo' src={Logo} alt='' />
-      </picture>
-    </>
+    <picture class='logo-container'>
+      <img src='../../assets/logo.svg' class='play__logo' alt='' />
+    </picture>
   )
 }

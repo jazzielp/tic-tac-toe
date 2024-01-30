@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { TURNS } from '../src/const/const'
-import { LargeButtonYellow } from './components/LargeButton'
-
+import { Header } from './components/Header/Index'
 function App () {
   const [board, setBoard] = useState(() => {
     const boardStorage = window.localStorage.getItem('board')
@@ -15,7 +14,7 @@ function App () {
     <>
       <main className='main'>
         <Header turn={turn} />
-        <Board />
+        {/* <Board /> */}
       </main>
     </>
   )

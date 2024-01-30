@@ -13,8 +13,10 @@ function App () {
   })
   return (
     <>
-      <LargeButtonYellow text='Button 1' colorButton='yellow' widthFull={false} />
-      <LargeButtonYellow text='Button 2' colorButton='blue' widthFull />
+      <main className='main'>
+        <Header turn={turn} />
+        <Board />
+      </main>
     </>
   )
 }

@@ -1,10 +1,12 @@
 import React from 'react'
+import './Index.css'
+import iconRestart from '../../assets/icon-restart.svg'
 
 export function ResetButton () {
   return (
     <div className='button-content'>
       <button className='button'>
-        <img className='icon' src='../../assets/icon-restart.svg' alt='Icon restart' />
+        <img className='icon' src={iconRestart} alt='Icon restart' />
       </button>
     </div>
   )

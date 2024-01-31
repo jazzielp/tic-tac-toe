@@ -34,9 +34,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 327px;
-  min-width: 327px;
-  padding: 20px;
+  width: 375px;
+  min-width: 375px;
+  padding: 10px;
+  background-color: red;
 
 }
 

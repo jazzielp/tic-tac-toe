@@ -1,4 +1,6 @@
 .square {
+  display: grid;
+  place-content: center;
   width: 96px;
   height: 96px;
   background-color: var(--Semi-Dark-Navy);

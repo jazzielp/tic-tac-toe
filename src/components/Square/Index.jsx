@@ -1,12 +1,13 @@
 import React from 'react'
-import TURNS from '../../const/const'
+import './Index.css'
+import { TURNS } from '../../const/const'
 import { IconX, IconO } from '../Icons/Icons'
 
-export function Square ({ turn }) {
+export function Square ({ square }) {
   let icon
-  if (!turn) {
+  if (!square) {
     icon = null
-  } else if (turn === TURNS.X) {
+  } else if (square === TURNS.X) {
     icon = <IconX />
   } else {
     icon = <IconO />

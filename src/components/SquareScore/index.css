@@ -1,0 +1,32 @@
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  height: 64px;
+  border-radius: 10px;
+}
+
+.score__text {
+  font-size: 1.6rem;
+  color: var(--Dark-Navy);
+}
+
+.score__score {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--Dark-Navy);
+}
+
+.score--P1 {
+  background-color: var(--Light-Blue);
+}
+
+.score--TIES{
+  background-color: var(--Silver);
+}
+
+.score--P2{
+  background-color: var(--Light-Yellow);
+}

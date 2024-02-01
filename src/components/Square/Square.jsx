@@ -7,7 +7,7 @@ export function Square ({ turn, square, clickSquare, index }) {
   let icon
   if (!square[index]) {
     icon = null
-  } else if (square === TURNS.X) {
+  } else if (square[index] === TURNS.X) {
     icon = <IconX />
   } else {
     icon = <IconO />

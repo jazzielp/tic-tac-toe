@@ -20,7 +20,7 @@ function App () {
     <>
       <main className='main'>
         <Header turn={turn} />
-        <Board turn={turn} board={board} scoreboard={scoreboard} setBoard={setBoard} />
+        <Board turn={turn} board={board} scoreboard={scoreboard} setBoard={setBoard} setTurn={setTurn} />
       </main>
     </>
   )

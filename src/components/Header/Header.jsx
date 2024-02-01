@@ -1,4 +1,4 @@
-import './index.css'
+import './Header.css'
 import { IconGame } from '../IconGame'
 import { Turn } from '../Turn'
 import { ResetButton } from '../ResetButton'

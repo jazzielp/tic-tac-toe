@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TURNS, INITIAL_BOARD } from '../src/const/const'
-import { Header } from './components/Header/Index'
+import { Header } from './components/Header/Header'
 import { Board } from './components/Board/Board'
 function App () {
   const [board, setBoard] = useState(() => {

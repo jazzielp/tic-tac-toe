@@ -3,9 +3,9 @@ import './Index.css'
 import { TURNS } from '../../const/const'
 import { IconX, IconO } from '../Icons/Icons'
 
-export function Square ({ square }) {
+export function Square ({ turn, square, clickSquare, index }) {
   let icon
-  if (!square) {
+  if (!square[index]) {
     icon = null
   } else if (square === TURNS.X) {
     icon = <IconX />
@@ -14,7 +14,7 @@ export function Square ({ square }) {
   }
 
   return (
-    <div className='square'>
+    <div onClick={() => clickSquare(index)} className='square'>
       {
         icon
       }

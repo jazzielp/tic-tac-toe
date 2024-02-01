@@ -1,5 +1,5 @@
 import React from 'react'
-import './Index.css'
+import './Square.css'
 import { TURNS } from '../../const/const'
 import { IconX, IconO } from '../Icons/Icons'
 

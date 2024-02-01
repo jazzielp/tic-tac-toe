@@ -1,7 +1,7 @@
 import React from 'react'
 import './Board.css'
-import { Square } from '../Square'
-import { SquareScore } from '../SquareScore'
+import { Square } from '../Square/Square'
+import { SquareScore } from '../SquareScore/SquareScore'
 
 export function Board ({ turn, board, scoreboard, setBoard }) {
   const clickSquare = (index) => {

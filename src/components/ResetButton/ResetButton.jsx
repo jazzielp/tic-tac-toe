@@ -1,5 +1,5 @@
 import React from 'react'
-import './Index.css'
+import './ResetButton.css'
 import iconRestart from '../../assets/icon-restart.svg'
 
 export function ResetButton () {

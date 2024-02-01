@@ -1,7 +1,7 @@
 import './Header.css'
-import { IconGame } from '../IconGame'
-import { Turn } from '../Turn'
-import { ResetButton } from '../ResetButton'
+import { IconGame } from '../IconGame/IconGame'
+import { Turn } from '../Turn/Turn'
+import { ResetButton } from '../ResetButton/ResetButton'
 
 export function Header ({ turn }) {
   return (

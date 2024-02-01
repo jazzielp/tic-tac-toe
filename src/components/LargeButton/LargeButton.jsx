@@ -1,5 +1,5 @@
 import React from 'react'
-import './Index.css'
+import './LargeButton.css'
 
 export function LargeButtonYellow ({ text, colorButton, widthFull = false }) {
   return (

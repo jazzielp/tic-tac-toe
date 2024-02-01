@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './SquareScore.css'
 
 export function SquareScore ({ title, score, type }) {
   return (

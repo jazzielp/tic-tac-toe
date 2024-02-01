@@ -6,6 +6,7 @@ import { TURNS } from '../../const/const'
 
 export function Board ({ turn, board, scoreboard, setBoard, setTurn }) {
   const clickSquare = (index) => {
+    if (board[index]) return null
     const newBoard = [...board]
     newBoard[index] = turn
     setBoard(newBoard)

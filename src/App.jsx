@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { TURNS, INITIAL_BOARD } from '../src/const/const'
 import { Header } from './components/Header/Index'
-import { Board } from './components/Board'
+import { Board } from './components/Board/Board'
 function App () {
   const [board, setBoard] = useState(() => {
     const boardStorage = window.localStorage.getItem('board')

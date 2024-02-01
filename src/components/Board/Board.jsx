@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './Board.css'
 import { Square } from '../Square'
 import { SquareScore } from '../SquareScore'
 

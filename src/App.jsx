@@ -16,11 +16,13 @@ function App () {
     const scoreboardStorage = window.localStorage.getItem('scoreboard')
     return scoreboardStorage ? JSON.parse(scoreboardStorage) : INITIAL_BOARD
   })
+
+  const [winner, setWinner] = useState(false)
   return (
     <>
       <main className='main'>
         <Header turn={turn} />
-        <Board turn={turn} board={board} scoreboard={scoreboard} setBoard={setBoard} setTurn={setTurn} />
+        <Board turn={turn} board={board} scoreboard={scoreboard} setBoard={setBoard} setTurn={setTurn} winner={winner} setWinner={setWinner} />
       </main>
     </>
   )

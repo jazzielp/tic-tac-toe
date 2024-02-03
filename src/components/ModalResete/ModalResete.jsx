@@ -1,5 +1,6 @@
 import React from 'react'
 import '../ModalResete/ModalResete.css'
+import { SmallButton } from '../SmallButton/SmallButton'
 
 export function ModalResete () {
   return (
@@ -8,8 +9,8 @@ export function ModalResete () {
         RESTART GAME?
       </h2>
       <div class='modal-win__buttons'>
-        <button class='modal-win__btn-1'>QUIT</button>
-        <button class='modal-win__btn-2'>NEXT ROUND</button>
+        <SmallButton colorButton='gray'>QUIT</SmallButton>
+        <SmallButton colorButton='yellow'>NEXT ROUND</SmallButton>
       </div>
     </>
   )

@@ -9,8 +9,8 @@ export function ModalResete () {
         RESTART GAME?
       </h2>
       <div class='modal-win__buttons'>
-        <SmallButton colorButton='gray'>QUIT</SmallButton>
-        <SmallButton colorButton='yellow'>NEXT ROUND</SmallButton>
+        <SmallButton colorButton='gray'>NO, CANCEL</SmallButton>
+        <SmallButton colorButton='yellow'>YES, RESTART</SmallButton>
       </div>
     </>
   )

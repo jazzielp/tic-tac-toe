@@ -26,10 +26,8 @@ function App () {
   return (
     <>
       <main className='main'>
-        <Modal>
-          {/* <ModalWinner winnerTurn={winnerTurn} /> */}
-          <ModalResete />
-        </Modal>
+        {winner && <ModalWinner winnerTurn={winnerTurn} />}
+        {/* <ModalResete /> */}
         <Header turn={turn} />
         <Board
           turn={turn}

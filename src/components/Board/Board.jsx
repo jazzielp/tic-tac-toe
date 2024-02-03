@@ -16,11 +16,11 @@ export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, set
   }
 
   const checkWinner = (board) => {
-    for (const winner of WINNING_COMBINATIONS) {
-      if (board[winner[0]]) {
-        if (board[winner[0]] === board[winner[1]]) {
-          if (board[winner[1]] === board[winner[2]]) {
-            setWinner(true)
+    for (const comboWinner of WINNING_COMBINATIONS) {
+      if (board[comboWinner[0]]) {
+        if (board[comboWinner[0]] === board[comboWinner[1]]) {
+          if (board[comboWinner[1]] === board[comboWinner[2]]) {
+            setWinner(!winner)
             setWinnerTurn(turn)
           }
         }
@@ -37,6 +37,7 @@ export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, set
       <SquareScore title='X (YOU)' score={scoreboard.P1} type='P1' />
       <SquareScore title='TIES' score={scoreboard.TIES} type='TIES' />
       <SquareScore title='O (CPU)' score={scoreboard.P2} type='P2' />
+      <p>{winner}</p>
     </section>
   )
 }

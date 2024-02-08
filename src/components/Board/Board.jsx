@@ -31,7 +31,7 @@ export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, set
     <section className='board'>
       {
         board.map((_, index) => {
-          return <Square key={index} square={board} index={index} clickSquare={clickSquare} />
+          return <Square turn={turn} key={index} square={board} index={index} clickSquare={clickSquare} />
         })
       }
       <SquareScore title='X (YOU)' score={scoreboard.P1} type='P1' />

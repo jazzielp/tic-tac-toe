@@ -27,7 +27,6 @@ function App () {
     <>
       <main className='main'>
         {winner && <ModalWinner winnerTurn={winnerTurn} />}
-        {/* <ModalResete /> */}
         <Header turn={turn} />
         <Board
           turn={turn}

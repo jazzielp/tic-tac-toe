@@ -11,3 +11,30 @@
 .square:hover {
   cursor: pointer;
 }
+
+.square:hover .square__icon--x,
+.square:hover .square__icon--o {
+  display: block;
+}
+
+.square__icon {
+  width: 40px;
+  height: 40px;
+}
+.square__icon--x {
+  display: none;
+  cursor: pointer;
+  background-image: url('../../assets/icon-x-outline.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.square__icon--o {
+  display: none;
+  cursor: pointer;
+  background-image: url('../../assets/icon-o-outline.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

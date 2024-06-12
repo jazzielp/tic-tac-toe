@@ -39,6 +39,7 @@ function App () {
           setWinnerTurn={setWinnerTurn}
           comboWinner={comboWinner}
           setComboWinner={setComboWinner}
+          winnerTurn={winnerTurn}
         />
       </main>
     </>

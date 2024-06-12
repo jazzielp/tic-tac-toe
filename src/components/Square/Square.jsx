@@ -3,15 +3,16 @@ import './Square.css'
 import { TURNS } from '../../const/const'
 import iconX from '../../assets/icon-x.svg'
 import iconO from '../../assets/icon-o.svg'
-import iconXOutline from '../../assets/icon-x-outline.svg'
-import iconOOutline from '../../assets/icon-o-outline.svg'
+import iconXOutline from '../../assets/icon-x-black.svg'
+import iconOOutline from '../../assets/icon-o-black.svg'
 
-export function Square ({ turn, square, clickSquare, index }) {
+export function Square ({ turn, square, clickSquare, index, classWinner, winnerTurn }) {
   return (
     <div
       onClick={() => clickSquare(index)}
-      className={classWinner ? 'square square--winner' : 'square'}
+      className={classWinner ? `square square--winner-${winnerTurn}` : 'square'}
     >
+
       {
         square[index] !== null
           ? classWinner

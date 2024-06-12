@@ -38,3 +38,11 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.square--winner-x {
+  background-color: var(--Light-Blue);
+}
+
+.square--winner-o {
+  background-color: var(--Light-Yellow);
+}

@@ -4,7 +4,7 @@ import { Square } from '../Square/Square'
 import { SquareScore } from '../SquareScore/SquareScore'
 import { TURNS, WINNING_COMBINATIONS } from '../../const/const'
 
-export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, setWinner, setWinnerTurn }) {
+export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, setWinner, setWinnerTurn, comboWinner, setComboWinner }) {
   const clickSquare = (index) => {
     if (board[index] || winner) return null
     const newBoard = [...board]
@@ -22,12 +22,14 @@ export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, set
           if (board[comboWinner[1]] === board[comboWinner[2]]) {
             setWinner(!winner)
             setWinnerTurn(turn)
+            setComboWinner(comboWinner)
           }
         }
       }
     }
   }
   return (
+
     <section className='board'>
       {
         board.map((_, index) => {

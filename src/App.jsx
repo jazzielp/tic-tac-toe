@@ -2,9 +2,7 @@ import { useState } from 'react'
 import { TURNS, INITIAL_BOARD } from '../src/const/const'
 import { Header } from './components/Header/Header'
 import { Board } from './components/Board/Board'
-import { Modal } from './components/Modal/Modal'
 import { ModalWinner } from './components/ModalWinner/ModalWinner'
-import { ModalResete } from './components/ModalResete/ModalResete'
 function App () {
   const [board, setBoard] = useState(() => {
     const boardStorage = window.localStorage.getItem('board')
@@ -19,6 +17,8 @@ function App () {
     const scoreboardStorage = window.localStorage.getItem('scoreboard')
     return scoreboardStorage ? JSON.parse(scoreboardStorage) : INITIAL_BOARD
   })
+
+  const [comboWinner, setComboWinner] = useState([])
 
   const [winner, setWinner] = useState(false)
   const [winnerTurn, setWinnerTurn] = useState(null)
@@ -37,6 +37,8 @@ function App () {
           winner={winner}
           setWinner={setWinner}
           setWinnerTurn={setWinnerTurn}
+          comboWinner={comboWinner}
+          setComboWinner={setComboWinner}
         />
       </main>
     </>

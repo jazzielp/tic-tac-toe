@@ -6,7 +6,7 @@ import { SmallButton } from '../SmallButton/SmallButton'
 import { Modal } from '../Modal/Modal'
 import './ModalWinner.css'
 
-export function ModalWinner ({ winnerTurn }) {
+export function ModalWinner ({ winnerTurn, resetGame }) {
   return (
     <Modal>
       <h2 className='modal-win__title'>

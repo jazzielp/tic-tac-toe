@@ -3,7 +3,7 @@ export const TURNS = {
   O: 'o'
 }
 
-export const INITIAL_BOARD = {
+export const INITIAL_SCORE = {
   P1: 0,
   TIES: 0,
   P2: 0
@@ -19,3 +19,5 @@ export const WINNING_COMBINATIONS = [
   [0, 4, 8],
   [2, 4, 6]
 ]
+
+export const INITIAL_BOARD = Array(9).fill(null)

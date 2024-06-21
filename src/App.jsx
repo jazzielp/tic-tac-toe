@@ -3,6 +3,7 @@ import { TURNS, INITIAL_SCORE, INITIAL_BOARD } from '../src/const/const'
 import { Header } from './components/Header/Header'
 import { Board } from './components/Board/Board'
 import { ModalWinner } from './components/ModalWinner/ModalWinner'
+import { NewGame } from './components/NewGame/NewGame'
 function App () {
   const [board, setBoard] = useState(() => {
     const boardStorage = window.localStorage.getItem('board')
@@ -36,7 +37,7 @@ function App () {
     <>
       <main className='main'>
         {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} />}
-        <Header turn={turn} resetGame={resetGame} />
+        {/* <Header turn={turn} resetGame={resetGame} />
         <Board
           turn={turn}
           board={board}
@@ -49,7 +50,8 @@ function App () {
           comboWinner={comboWinner}
           setComboWinner={setComboWinner}
           winnerTurn={winnerTurn}
-        />
+        /> */}
+        <NewGame />
       </main>
     </>
   )

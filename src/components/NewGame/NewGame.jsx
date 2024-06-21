@@ -5,6 +5,7 @@ import IconOGray from '../../assets/icon-o-gray.svg'
 import IconOBlack from '../../assets/icon-o-black.svg'
 import IconXBlack from '../../assets/icon-x-black.svg'
 import { LargeButton } from '../LargeButton/LargeButton'
+import './NewGame.css'
 
 export function NewGame () {
   return (

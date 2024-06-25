@@ -4,7 +4,7 @@ import { Square } from '../Square/Square'
 import { SquareScore } from '../SquareScore/SquareScore'
 import { TURNS, WINNING_COMBINATIONS } from '../../const/const'
 
-export function Board ({ turn, board, scoreBoard, setBoard, setTurn, winner, setWinner, setWinnerTurn, comboWinner, setComboWinner, winnerTurn }) {
+export function Board ({ turn, board, scoreBoard, setBoard, setTurn, winner, setWinner, setWinnerTurn, comboWinner, setComboWinner, winnerTurn, setScoreBoard }) {
   const clickSquare = (index) => {
     if (board[index] || winner) return null
     const newBoard = [...board]
@@ -23,6 +23,13 @@ export function Board ({ turn, board, scoreBoard, setBoard, setTurn, winner, set
             setWinner(!winner)
             setWinnerTurn(turn)
             setComboWinner(comboWinner)
+            const newScore = { ...scoreBoard }
+            if (turn === TURNS.X) {
+              newScore.X.score += 1
+            } else {
+              newScore.O.score += 1
+            }
+            setScoreBoard(newScore)
           }
         }
       }

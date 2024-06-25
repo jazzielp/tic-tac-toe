@@ -10,9 +10,21 @@
 .small-button--gray {
   background-color: var(--Silver);
   box-shadow: 0px 4px 0px 0px rgba(107,137,151,1);
+  transition: all .1s ease-in;
 }
 
 .small-button--yellow {
   background-color: var(--Light-Yellow);
   box-shadow: 0px 4px 0px 0px rgba(204,139,19,1);
+  transition: all .1s ease-in;
+}
+
+.small-button--gray:hover {
+  background-color: var(--Silver-Hover);
+  cursor: pointer;
+}
+
+.small-button--yellow:hover {
+  background-color: var(--Light-Yellow-Hover);
+  cursor: pointer;
 }

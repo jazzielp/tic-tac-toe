@@ -4,9 +4,15 @@ export const TURNS = {
 }
 
 export const INITIAL_SCORE = {
-  P1: 0,
+  X: {
+    name: '',
+    score: 0
+  },
   TIES: 0,
-  P2: 0
+  O: {
+    name: '',
+    score: 0
+  }
 }
 
 export const WINNING_COMBINATIONS = [
@@ -21,3 +27,8 @@ export const WINNING_COMBINATIONS = [
 ]
 
 export const INITIAL_BOARD = Array(9).fill(null)
+
+export const VS_PLAYER = {
+  CPU: 'CPU',
+  PLAYER: 'PLAYER'
+}

@@ -19,9 +19,9 @@ function App () {
     return scoreboardStorage ? JSON.parse(scoreboardStorage) : INITIAL_SCORE
   })
 
-  const [vsPlayer, setVsPlayer] = useState(() => {
-    const scoreboardStorage = window.localStorage.getItem('vsPlayer')
-    return scoreboardStorage ? JSON.parse(scoreboardStorage) : null
+  const [newGame, setNewGame] = useState(() => {
+    const scoreboardStorage = window.localStorage.getItem('newGame')
+    return scoreboardStorage ? JSON.parse(scoreboardStorage) : true
   })
 
   const [comboWinner, setComboWinner] = useState([])
@@ -43,9 +43,9 @@ function App () {
       <main className='main'>
         {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} />}
         {
-          vsPlayer !== null
-
-            ? <>
+          newGame
+            ? <NewGame turn={turn} setTurn={setTurn} />
+            : <>
               <Header turn={turn} resetGame={resetGame} />
               <Board
                 turn={turn}
@@ -60,8 +60,8 @@ function App () {
                 setComboWinner={setComboWinner}
                 winnerTurn={winnerTurn}
               />
-            </>
-            : <NewGame turn={turn} setTurn={setTurn} />
+              </>
+
         }
       </main>
     </>

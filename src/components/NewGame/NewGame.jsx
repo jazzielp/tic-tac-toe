@@ -5,10 +5,11 @@ import IconOGray from '../../assets/icon-o-gray.svg'
 import IconOBlack from '../../assets/icon-o-black.svg'
 import IconXBlack from '../../assets/icon-x-black.svg'
 import { LargeButton } from '../LargeButton/LargeButton'
-import { TURNS } from '../../const/const'
+
+import { TURNS, VS_PLAYER } from '../../const/const'
 import './NewGame.css'
 
-export function NewGame ({ turn, setTurn }) {
+export function NewGame ({ turn, setTurn, setVsPlayer }) {
   const handleClick = ({ turn }) => {
     setTurn(turn)
   }
@@ -37,10 +38,10 @@ export function NewGame ({ turn, setTurn }) {
         </p>
       </section>
       <div className='choose-player'>
-        <LargeButton colorButton='yellow'>
+        <LargeButton action={setVsPlayer} colorButton='yellow' value={VS_PLAYER.CPU}>
           NEW GAME (VS CPU)
         </LargeButton>
-        <LargeButton colorButton='blue'>
+        <LargeButton action={setVsPlayer} colorButton='blue' value={VS_PLAYER.PLAYER}>
           NEW GAME (VS PLAYER)
         </LargeButton>
       </div>

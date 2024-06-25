@@ -6,7 +6,7 @@ import { SmallButton } from '../SmallButton/SmallButton'
 import { Modal } from '../Modal/Modal'
 import './ModalWinner.css'
 
-export function ModalWinner ({ winnerTurn, resetGame }) {
+export function ModalWinner ({ winnerTurn, resetGame, nextRound }) {
   return (
     <Modal>
       <h2 className='modal-win__title'>
@@ -18,7 +18,7 @@ export function ModalWinner ({ winnerTurn, resetGame }) {
       </div>
       <div className='modal-win__buttons'>
         <SmallButton colorButton='gray'>QUIT</SmallButton>
-        <SmallButton colorButton='yellow'>NEXT ROUND</SmallButton>
+        <SmallButton action={nextRound} colorButton='yellow'>NEXT ROUND</SmallButton>
       </div>
     </Modal>
   )

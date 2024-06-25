@@ -39,6 +39,14 @@ function App () {
     setWinnerTurn(null)
   }
 
+  const nextRound = () => {
+    setWinner(false)
+    setWinnerTurn(null)
+    setComboWinner([])
+    setBoard(INITIAL_BOARD)
+    setTurn(TURNS.X)
+  }
+
   const selectGame = ({ value }) => {
     setTurn(turn)
     setNewGame(false)
@@ -56,8 +64,7 @@ function App () {
   return (
     <>
       <main className='main'>
-        {console.log(scoreBoard)}
-        {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} />}
+        {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} nextRound={nextRound} />}
         {
           newGame
             ? <NewGame turn={turn} setTurn={setTurn} selectGame={selectGame} />
@@ -75,8 +82,9 @@ function App () {
                 comboWinner={comboWinner}
                 setComboWinner={setComboWinner}
                 winnerTurn={winnerTurn}
+                setScoreBoard={setScoreboard}
               />
-            </>
+              </>
 
         }
       </main>

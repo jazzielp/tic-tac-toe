@@ -30,5 +30,7 @@ export const INITIAL_BOARD = Array(9).fill(null)
 
 export const VS_PLAYER = {
   CPU: 'CPU',
-  PLAYER: 'PLAYER'
+  P1: 'P1',
+  P2: 'P2',
+  YOU: 'YOU'
 }

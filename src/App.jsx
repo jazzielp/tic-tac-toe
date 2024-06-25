@@ -14,14 +14,14 @@ function App () {
     return turnStorage ?? TURNS.X
   })
 
-  const [scoreboard, setScoreboard] = useState(() => {
-    const scoreboardStorage = window.localStorage.getItem('scoreboard')
-    return scoreboardStorage ? JSON.parse(scoreboardStorage) : INITIAL_SCORE
+  const [scoreBoard, setScoreboard] = useState(() => {
+    const scoreBoardStorage = window.localStorage.getItem('scoreboard')
+    return scoreBoardStorage ? JSON.parse(scoreBoardStorage) : INITIAL_SCORE
   })
 
   const [newGame, setNewGame] = useState(() => {
-    const scoreboardStorage = window.localStorage.getItem('newGame')
-    return scoreboardStorage ? JSON.parse(scoreboardStorage) : true
+    const newGameStorage = window.localStorage.getItem('newGame')
+    return newGameStorage ? JSON.parse(newGameStorage) : true
   })
 
   const [comboWinner, setComboWinner] = useState([])
@@ -38,19 +38,34 @@ function App () {
     setWinnerTurn(null)
   }
 
+  const selectGame = ({ value }) => {
+    setTurn(turn)
+    setNewGame(false)
+    const newScore = { ...scoreBoard }
+    if (turn === TURNS.X) {
+      newScore.O.name = value
+      newScore.X.name = 'You'
+    } else {
+      newScore.X.name = value
+      newScore.O.name = 'You'
+    }
+    setScoreboard(newScore)
+  }
+
   return (
     <>
       <main className='main'>
+        {console.log(scoreBoard)}
         {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} />}
         {
           newGame
-            ? <NewGame turn={turn} setTurn={setTurn} />
+            ? <NewGame turn={turn} setTurn={setTurn} selectGame={selectGame} />
             : <>
               <Header turn={turn} resetGame={resetGame} />
               <Board
                 turn={turn}
                 board={board}
-                scoreboard={scoreboard}
+                scoreboard={scoreBoard}
                 setBoard={setBoard}
                 setTurn={setTurn}
                 winner={winner}

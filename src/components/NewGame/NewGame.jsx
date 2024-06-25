@@ -9,10 +9,11 @@ import { LargeButton } from '../LargeButton/LargeButton'
 import { TURNS, VS_PLAYER } from '../../const/const'
 import './NewGame.css'
 
-export function NewGame ({ turn, setTurn, setVsPlayer }) {
-  const handleClick = ({ turn }) => {
+export function NewGame ({ turn, setTurn, selectGame }) {
+  const handleTurnClick = ({ turn }) => {
     setTurn(turn)
   }
+
   return (
     <>
       <div className='icon-contaier'>
@@ -26,10 +27,10 @@ export function NewGame ({ turn, setTurn, setVsPlayer }) {
       <section className='choose-turn'>
         <h1 className='choose-turn__title'>PICK PLAYER 1'S MARK</h1>
         <div className='choose-turn__turn'>
-          <button onClick={() => handleClick({ turn: TURNS.X })} className={TURNS.X === turn ? 'choose-turn__btn-active' : 'choose-turn__btn-inactive'}>
+          <button onClick={() => handleTurnClick({ turn: TURNS.X })} className={TURNS.X === turn ? 'choose-turn__btn-active' : 'choose-turn__btn-inactive'}>
             <img className='turn__icon' src={TURNS.X === turn ? IconXBlack : IconXGray} alt='Turn o' />
           </button>
-          <button onClick={() => handleClick({ turn: TURNS.O })} className={TURNS.O === turn ? 'choose-turn__btn-active' : 'choose-turn__btn-inactive'}>
+          <button onClick={() => handleTurnClick({ turn: TURNS.O })} className={TURNS.O === turn ? 'choose-turn__btn-active' : 'choose-turn__btn-inactive'}>
             <img className='turn__icon' src={TURNS.O === turn ? IconOBlack : IconOGray} alt='Turn o' />
           </button>
         </div>
@@ -38,10 +39,10 @@ export function NewGame ({ turn, setTurn, setVsPlayer }) {
         </p>
       </section>
       <div className='choose-player'>
-        <LargeButton action={setVsPlayer} colorButton='yellow' value={VS_PLAYER.CPU}>
+        <LargeButton action={selectGame} colorButton='yellow' value={VS_PLAYER.CPU}>
           NEW GAME (VS CPU)
         </LargeButton>
-        <LargeButton action={setVsPlayer} colorButton='blue' value={VS_PLAYER.PLAYER}>
+        <LargeButton action={selectGame} colorButton='blue' value={VS_PLAYER.PLAYER}>
           NEW GAME (VS PLAYER)
         </LargeButton>
       </div>

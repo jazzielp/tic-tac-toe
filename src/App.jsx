@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { TURNS, INITIAL_SCORE, INITIAL_BOARD } from '../src/const/const'
+import { TURNS, INITIAL_SCORE, INITIAL_BOARD, VS_PLAYER } from '../src/const/const'
 import { Header } from './components/Header/Header'
 import { Board } from './components/Board/Board'
 import { ModalWinner } from './components/ModalWinner/ModalWinner'
 import { NewGame } from './components/NewGame/NewGame'
+
 function App () {
   const [board, setBoard] = useState(() => {
     const boardStorage = window.localStorage.getItem('board')
@@ -43,11 +44,11 @@ function App () {
     setNewGame(false)
     const newScore = { ...scoreBoard }
     if (turn === TURNS.X) {
-      newScore.O.name = value
-      newScore.X.name = 'You'
+      newScore.O.name = value === VS_PLAYER.CPU ? VS_PLAYER.CPU : VS_PLAYER.P2
+      newScore.X.name = value === VS_PLAYER.CPU ? VS_PLAYER.YOU : VS_PLAYER.P1
     } else {
-      newScore.X.name = value
-      newScore.O.name = 'You'
+      newScore.X.name = value === VS_PLAYER.CPU ? VS_PLAYER.CPU : VS_PLAYER.P2
+      newScore.O.name = value === VS_PLAYER.CPU ? VS_PLAYER.YOU : VS_PLAYER.P1
     }
     setScoreboard(newScore)
   }
@@ -65,7 +66,7 @@ function App () {
               <Board
                 turn={turn}
                 board={board}
-                scoreboard={scoreBoard}
+                scoreBoard={scoreBoard}
                 setBoard={setBoard}
                 setTurn={setTurn}
                 winner={winner}
@@ -75,7 +76,7 @@ function App () {
                 setComboWinner={setComboWinner}
                 winnerTurn={winnerTurn}
               />
-              </>
+            </>
 
         }
       </main>

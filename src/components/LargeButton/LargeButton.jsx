@@ -2,9 +2,8 @@ import React from 'react'
 import './LargeButton.css'
 
 export function LargeButton ({ children, colorButton, widthFull = false, action, value }) {
-  console.log('value', value)
   const handleClick = ({ value }) => {
-    action(value)
+    action({ value })
   }
   return (
     <button

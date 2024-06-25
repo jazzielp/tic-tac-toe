@@ -4,7 +4,7 @@ import { Square } from '../Square/Square'
 import { SquareScore } from '../SquareScore/SquareScore'
 import { TURNS, WINNING_COMBINATIONS } from '../../const/const'
 
-export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, setWinner, setWinnerTurn, comboWinner, setComboWinner, winnerTurn }) {
+export function Board ({ turn, board, scoreBoard, setBoard, setTurn, winner, setWinner, setWinnerTurn, comboWinner, setComboWinner, winnerTurn }) {
   const clickSquare = (index) => {
     if (board[index] || winner) return null
     const newBoard = [...board]
@@ -37,9 +37,9 @@ export function Board ({ turn, board, scoreboard, setBoard, setTurn, winner, set
           return <Square turn={turn} key={index} square={board} index={index} clickSquare={clickSquare} classWinner={classWinner} winnerTurn={winnerTurn} />
         })
       }
-      <SquareScore title='X (YOU)' score={scoreboard.P1} type='P1' />
-      <SquareScore title='TIES' score={scoreboard.TIES} type='TIES' />
-      <SquareScore title='O (CPU)' score={scoreboard.P2} type='P2' />
+      <SquareScore title={`X (${scoreBoard.X.name})`} score={scoreBoard.X.score} type='P1' />
+      <SquareScore title='TIES' score={scoreBoard.TIES} type='TIES' />
+      <SquareScore title={`O (${scoreBoard.O.name})`} score={scoreBoard.O.score} type='P2' />
       <p>{winner}</p>
     </section>
   )

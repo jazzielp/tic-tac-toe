@@ -42,7 +42,7 @@ export function NewGame ({ turn, setTurn, selectGame }) {
         <LargeButton action={selectGame} colorButton='yellow' value={VS_PLAYER.CPU}>
           NEW GAME (VS CPU)
         </LargeButton>
-        <LargeButton action={selectGame} colorButton='blue' value={VS_PLAYER.PLAYER}>
+        <LargeButton action={selectGame} colorButton='blue' value={VS_PLAYER.P1}>
           NEW GAME (VS PLAYER)
         </LargeButton>
       </div>

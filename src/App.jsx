@@ -4,6 +4,7 @@ import { Header } from './components/Header/Header'
 import { Board } from './components/Board/Board'
 import { ModalWinner } from './components/ModalWinner/ModalWinner'
 import { NewGame } from './components/NewGame/NewGame'
+import { ModalTied } from './components/ModalTied/ModalTied'
 
 function App () {
   const [board, setBoard] = useState(() => {
@@ -46,6 +47,7 @@ function App () {
     setComboWinner([])
     setBoard(INITIAL_BOARD)
     setTurn(TURNS.X)
+    setTie(false)
   }
 
   const selectGame = ({ value }) => {
@@ -66,6 +68,7 @@ function App () {
     <>
       <main className='main'>
         {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} nextRound={nextRound} scoreBoard={scoreBoard} />}
+        {tie && <ModalTied resetGame={resetGame} nextRound={nextRound} />}
         {
           newGame
             ? <NewGame turn={turn} setTurn={setTurn} selectGame={selectGame} />
@@ -87,7 +90,7 @@ function App () {
                 tie={tie}
                 setTie={setTie}
               />
-            </>
+              </>
 
         }
       </main>

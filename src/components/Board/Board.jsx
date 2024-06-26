@@ -32,10 +32,12 @@ export function Board (
   }
 
   const checkWinner = (board) => {
+    let hasWinner = false
     for (const comboWinner of WINNING_COMBINATIONS) {
       if (board[comboWinner[0]]) {
         if (board[comboWinner[0]] === board[comboWinner[1]]) {
           if (board[comboWinner[1]] === board[comboWinner[2]]) {
+            hasWinner = true
             setWinner(!winner)
             setWinnerTurn(turn)
             setComboWinner(comboWinner)
@@ -50,7 +52,7 @@ export function Board (
         }
       }
     }
-    if (!winner) {
+    if (!hasWinner) {
       const isBoardFull = board.every((square) => square !== null)
       if (isBoardFull) {
         const newScore = { ...scoreBoard }

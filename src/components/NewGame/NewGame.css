@@ -46,7 +46,7 @@
 
 .choose-turn__btn-inactive{
   background: none;
-  transition: all .1s ease-in;
+  /* transition: all .1s ease-in; */
 }
 
 .choose-turn__btn-inactive:hover {

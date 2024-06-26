@@ -19,7 +19,8 @@ export function Board (
     winnerTurn,
     setScoreBoard,
     tie,
-    setTie
+    setTie,
+    saveInLocalStorage
   }) {
   const clickSquare = (index) => {
     if (board[index] || winner) return null
@@ -29,6 +30,7 @@ export function Board (
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
     checkWinner(newBoard)
+    saveInLocalStorage()
   }
 
   const checkWinner = (board) => {

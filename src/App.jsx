@@ -31,6 +31,7 @@ function App () {
   const [winner, setWinner] = useState(false)
   const [winnerTurn, setWinnerTurn] = useState(null)
   const [tie, setTie] = useState(false)
+  const [selectTurn, setSelectTurn] = useState(TURNS.X)
 
   const resetGame = () => {
     setBoard(INITIAL_BOARD)
@@ -51,10 +52,9 @@ function App () {
   }
 
   const selectGame = ({ value }) => {
-    setTurn(turn)
     setNewGame(false)
     const newScore = { ...scoreBoard }
-    if (turn === TURNS.X) {
+    if (selectTurn === TURNS.X) {
       newScore.O.name = value === VS_PLAYER.CPU ? VS_PLAYER.CPU : VS_PLAYER.P2
       newScore.X.name = value === VS_PLAYER.CPU ? VS_PLAYER.YOU : VS_PLAYER.P1
     } else {
@@ -64,6 +64,14 @@ function App () {
     setScoreboard(newScore)
   }
 
+  const saveInLocalStorage = () => {
+    console.log('saveInLocalStorage')
+    window.localStorage.setItem('board', JSON.stringify(board))
+    window.localStorage.setItem('turn', JSON.stringify(turn))
+    window.localStorage.setItem('scoreboard', JSON.stringify(scoreBoard))
+    window.localStorage.setItem('newGame', JSON.stringify(newGame))
+  }
+
   return (
     <>
       <main className='main'>
@@ -71,7 +79,7 @@ function App () {
         {tie && <ModalTied resetGame={resetGame} nextRound={nextRound} />}
         {
           newGame
-            ? <NewGame turn={turn} setTurn={setTurn} selectGame={selectGame} />
+            ? <NewGame selectTurn={selectTurn} setSelectTurn={setSelectTurn} selectGame={selectGame} />
             : <>
               <Header turn={turn} resetGame={resetGame} />
               <Board
@@ -89,6 +97,7 @@ function App () {
                 setScoreBoard={setScoreboard}
                 tie={tie}
                 setTie={setTie}
+                saveInLocalStorage={saveInLocalStorage}
               />
               </>
 

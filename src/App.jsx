@@ -29,6 +29,7 @@ function App () {
 
   const [winner, setWinner] = useState(false)
   const [winnerTurn, setWinnerTurn] = useState(null)
+  const [tie, setTie] = useState(false)
 
   const resetGame = () => {
     setBoard(INITIAL_BOARD)
@@ -64,7 +65,7 @@ function App () {
   return (
     <>
       <main className='main'>
-        {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} nextRound={nextRound} />}
+        {winner && <ModalWinner winnerTurn={winnerTurn} resetGame={resetGame} nextRound={nextRound} scoreBoard={scoreBoard} />}
         {
           newGame
             ? <NewGame turn={turn} setTurn={setTurn} selectGame={selectGame} />
@@ -83,8 +84,10 @@ function App () {
                 setComboWinner={setComboWinner}
                 winnerTurn={winnerTurn}
                 setScoreBoard={setScoreboard}
+                tie={tie}
+                setTie={setTie}
               />
-              </>
+            </>
 
         }
       </main>

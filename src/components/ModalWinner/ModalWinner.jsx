@@ -6,7 +6,7 @@ import { SmallButton } from '../SmallButton/SmallButton'
 import { Modal } from '../Modal/Modal'
 import './ModalWinner.css'
 
-export function ModalWinner ({ winnerTurn, resetGame, nextRound, scoreBoard }) {
+export function ModalWinner ({ winnerTurn, resetGame, nextRound, scoreBoard, quitGame }) {
   const [whoWin, setWhoWin] = useState('')
   useEffect(() => {
     if (winnerTurn === TURNS.X) {
@@ -42,7 +42,7 @@ export function ModalWinner ({ winnerTurn, resetGame, nextRound, scoreBoard }) {
         <p className={winnerTurn === TURNS.X ? 'modal-win__x' : 'modal-win__o'}>TAKES THE ROUND</p>
       </div>
       <div className='modal-win__buttons'>
-        <SmallButton colorButton='gray'>QUIT</SmallButton>
+        <SmallButton action={quitGame} colorButton='gray'>QUIT</SmallButton>
         <SmallButton action={nextRound} colorButton='yellow'>NEXT ROUND</SmallButton>
       </div>
     </Modal>

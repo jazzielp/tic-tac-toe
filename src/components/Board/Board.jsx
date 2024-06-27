@@ -42,9 +42,12 @@ export function Board (
           if (board[comboWinner[1]] === board[comboWinner[2]]) {
             hasWinner = true
             setWinner(!winner)
+            saveInLocalStorage({ name: 'winner', value: true })
             setWinnerTurn(turn)
+            saveInLocalStorage({ name: 'winnerTurn', value: turn })
             setComboWinner(comboWinner)
-            const newScore = { ...scoreBoard }
+            saveInLocalStorage({ name: 'comboWinner', value: comboWinner })
+            const newScore = structuredClone(scoreBoard)
             if (turn === TURNS.X) {
               newScore.X.score += 1
             } else {

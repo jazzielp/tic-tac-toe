@@ -26,11 +26,26 @@ function App () {
     return newGameStorage ? JSON.parse(newGameStorage) : true
   })
 
-  const [comboWinner, setComboWinner] = useState([])
+  const [comboWinner, setComboWinner] = useState(() => {
+    const comboWinnerStorage = window.localStorage.getItem('comboWinner')
+    return comboWinnerStorage ? JSON.parse(comboWinnerStorage) : []
+  })
 
-  const [winner, setWinner] = useState(false)
-  const [winnerTurn, setWinnerTurn] = useState(null)
-  const [tie, setTie] = useState(false)
+  const [winner, setWinner] = useState(() => {
+    const winnerStorage = window.localStorage.getItem('winner')
+    return winnerStorage ? JSON.parse(winnerStorage) : false
+  })
+
+  const [winnerTurn, setWinnerTurn] = useState(() => {
+    const winnerTurnStorage = window.localStorage.getItem('winnerTurn')
+    return winnerTurnStorage ? JSON.parse(winnerTurnStorage) : null
+  })
+
+  const [tie, setTie] = useState(() => {
+    const tieStorage = window.localStorage.getItem('tie')
+    return tieStorage ? JSON.parse(tieStorage) : false
+  })
+
   const [selectTurn, setSelectTurn] = useState(TURNS.X)
 
   const resetGame = () => {
@@ -62,14 +77,14 @@ function App () {
       newScore.O.name = value === VS_PLAYER.CPU ? VS_PLAYER.YOU : VS_PLAYER.P1
     }
     setScoreboard(newScore)
+    saveInLocalStorage({ name: 'scoreboard', value: newScore })
+    saveInLocalStorage({ name: 'turn', value: selectTurn })
+    saveInLocalStorage({ name: 'newGame', value: false })
   }
 
-  const saveInLocalStorage = () => {
-    console.log('saveInLocalStorage')
-    window.localStorage.setItem('board', JSON.stringify(board))
-    window.localStorage.setItem('turn', JSON.stringify(turn))
-    window.localStorage.setItem('scoreboard', JSON.stringify(scoreBoard))
-    window.localStorage.setItem('newGame', JSON.stringify(newGame))
+  const saveInLocalStorage = ({ name, value }) => {
+    console.log(name, value)
+    window.localStorage.setItem(name, JSON.stringify(value))
   }
 
   return (

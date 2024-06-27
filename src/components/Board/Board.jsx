@@ -30,7 +30,8 @@ export function Board (
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
     checkWinner(newBoard)
-    saveInLocalStorage()
+    saveInLocalStorage({ name: 'board', value: newBoard })
+    saveInLocalStorage({ name: 'turn', value: newTurn })
   }
 
   const checkWinner = (board) => {

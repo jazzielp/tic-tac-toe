@@ -13,6 +13,7 @@ function App () {
   })
   const [turn, setTurn] = useState(() => {
     const turnStorage = window.localStorage.getItem('turn')
+    console.log(turnStorage)
     return turnStorage ?? TURNS.X
   })
 
@@ -64,6 +65,8 @@ function App () {
     setBoard(INITIAL_BOARD)
     setTurn(TURNS.X)
     setTie(false)
+    window.localStorage.setItem('winner', false)
+    window.localStorage.setItem('winnerTurn', null)
   }
 
   const selectGame = ({ value }) => {

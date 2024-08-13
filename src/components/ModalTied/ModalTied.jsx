@@ -1,8 +1,10 @@
 import { SmallButton } from '../SmallButton/SmallButton'
 import { Modal } from '../Modal/Modal'
 import './ModalTied.css'
+import { useStore } from '../../stores/store'
 
-export function ModalTied ({ resetGame, nextRound }) {
+export function ModalTied () {
+  const nextRound = useStore((state) => state.nextRound)
   return (
     <Modal>
       <div className='modal-win__who-win'>

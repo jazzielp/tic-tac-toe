@@ -3,25 +3,20 @@ import './Board.css'
 import { Square } from '../Square/Square'
 import { SquareScore } from '../SquareScore/SquareScore'
 import { TURNS, WINNING_COMBINATIONS } from '../../const/const'
+import { useStore } from '../../stores/store'
 
-export function Board (
-  {
-    turn,
-    board,
-    scoreBoard,
-    setBoard,
-    setTurn,
-    winner,
-    setWinner,
-    setWinnerTurn,
-    comboWinner,
-    setComboWinner,
-    winnerTurn,
-    setScoreBoard,
-    tie,
-    setTie,
-    saveInLocalStorage
-  }) {
+export function Board () {
+  const turn = useStore((state) => state.turn)
+  const board = useStore((state) => state.board)
+  const scoreBoard = useStore((state) => state.scoreBoard)
+  const winner = useStore((state) => state.winner)
+  const comboWinner = useStore((state) => state.comboWinner)
+  const winnerTurn = useStore((state) => state.winnerTurn)
+
+  const setBoard = useStore((state) => state.setBoard)
+  const setTurn = useStore((state) => state.setTurn)
+  const setWinner = useStore((state) => state.setWinner)
+
   const clickSquare = (index) => {
     if (board[index] || winner) return null
     const newBoard = [...board]
@@ -30,8 +25,6 @@ export function Board (
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
     checkWinner(newBoard)
-    saveInLocalStorage({ name: 'board', value: newBoard })
-    saveInLocalStorage({ name: 'turn', value: newTurn })
   }
 
   const checkWinner = (board) => {
@@ -42,7 +35,6 @@ export function Board (
           if (board[comboWinner[1]] === board[comboWinner[2]]) {
             hasWinner = true
             setWinner(!winner)
-            saveInLocalStorage({ name: 'winner', value: true })
             setWinnerTurn(turn)
             saveInLocalStorage({ name: 'winnerTurn', value: turn })
             setComboWinner(comboWinner)

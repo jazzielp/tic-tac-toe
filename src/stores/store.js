@@ -12,6 +12,9 @@ export const useStore = create(persist((set, get) => ({
   winnerTurn: null,
   tie: false,
   selectTurn: TURNS.X,
+  setBoard: (board) => set({ board }),
+  setTurn: (turn) => set({ turn }),
+  setWinner: (winner) => set({ winner }),
   resetGame: () => {
     set({ board: INITIAL_BOARD })
     set({ turn: TURNS.X })
@@ -40,5 +43,15 @@ export const useStore = create(persist((set, get) => ({
       newScore.O.name = value === VS_PLAYER.CPU ? VS_PLAYER.YOU : VS_PLAYER.P1
     }
     set({ scoreBoard: newScore })
+  },
+  quitGame: () => {
+    set({ winner: false })
+    set({ winnerTurn: null })
+    set({ comboWinner: [] })
+    set({ board: INITIAL_BOARD })
+    set({ scoreBoard: INITIAL_SCORE })
+    set({ turn: TURNS.X })
+    set({ tie: false })
+    set({ newGame: true })
   }
 })))

@@ -4,9 +4,10 @@ import iconO from '../../assets/icon-o.svg'
 import iconX from '../../assets/icon-x.svg'
 import { SmallButton } from '../SmallButton/SmallButton'
 import { Modal } from '../Modal/Modal'
+import { useStore } from '../../stores/store'
 import './ModalWinner.css'
 
-export function ModalWinner ({ winnerTurn, resetGame, nextRound, scoreBoard, quitGame }) {
+export function ModalWinner () {
   const [whoWin, setWhoWin] = useState('')
   useEffect(() => {
     if (winnerTurn === TURNS.X) {
@@ -31,6 +32,11 @@ export function ModalWinner ({ winnerTurn, resetGame, nextRound, scoreBoard, qui
       }
     }
   }, [])
+
+  const winnerTurn = useStore((state) => state.winnerTurn)
+  const nextRound = useStore((state) => state.nextRound)
+  const scoreBoard = useStore((state) => state.scoreBoard)
+  const quitGame = useStore((state) => state.quitGame)
 
   return (
     <Modal>

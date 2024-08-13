@@ -5,11 +5,16 @@ import IconOGray from '../../assets/icon-o-gray.svg'
 import IconOBlack from '../../assets/icon-o-black.svg'
 import IconXBlack from '../../assets/icon-x-black.svg'
 import { LargeButton } from '../LargeButton/LargeButton'
+import { useStore } from '../../stores/store'
 
 import { TURNS, VS_PLAYER } from '../../const/const'
 import './NewGame.css'
 
-export function NewGame ({ selectTurn, setSelectTurn, selectGame }) {
+export function NewGame () {
+  const selectTurn = useStore((state) => state.selectTurn)
+  const setSelectTurn = useStore((state) => state.setSelectTurn)
+  const selectGame = useStore((state) => state.selectGame)
+
   const handleTurnClick = ({ turn }) => {
     setSelectTurn(turn)
   }

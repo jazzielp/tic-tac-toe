@@ -13,8 +13,7 @@ function App () {
   })
   const [turn, setTurn] = useState(() => {
     const turnStorage = window.localStorage.getItem('turn')
-    console.log(turnStorage)
-    return turnStorage ?? TURNS.X
+    return turnStorage ? JSON.parse(turnStorage) : TURNS.X
   })
 
   const [scoreBoard, setScoreBoard] = useState(() => {
@@ -56,6 +55,9 @@ function App () {
     setComboWinner([])
     setWinner(false)
     setWinnerTurn(null)
+    saveInLocalStorage({ name: 'board', value: INITIAL_BOARD })
+    saveInLocalStorage({ name: 'turn', value: TURNS.X })
+    saveInLocalStorage({ name: 'comboWinner', value: [] })
   }
 
   const nextRound = () => {
@@ -67,6 +69,7 @@ function App () {
     setTie(false)
     window.localStorage.setItem('winner', false)
     window.localStorage.setItem('winnerTurn', null)
+    window.localStorage.setItem('board', JSON.stringify(INITIAL_BOARD))
   }
 
   const selectGame = ({ value }) => {
@@ -105,6 +108,7 @@ function App () {
     saveInLocalStorage({ name: 'winner', value: false })
     saveInLocalStorage({ name: 'winnerTurn', value: null })
     saveInLocalStorage({ name: 'comboWinner', value: [] })
+    saveInLocalStorage({ name: 'board', value: INITIAL_BOARD })
   }
 
   return (

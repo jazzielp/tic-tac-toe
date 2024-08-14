@@ -1,8 +1,8 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+// import { persist } from 'zustand/middleware'
 import { TURNS, INITIAL_SCORE, INITIAL_BOARD, VS_PLAYER } from '../const/const'
 
-export const useStore = create(persist((set, get) => ({
+export const useStore = create((set, get) => ({
   board: INITIAL_BOARD,
   turn: TURNS.X,
   scoreBoard: INITIAL_SCORE,
@@ -15,6 +15,11 @@ export const useStore = create(persist((set, get) => ({
   setBoard: (board) => set({ board }),
   setTurn: (turn) => set({ turn }),
   setWinner: (winner) => set({ winner }),
+  setWinnerTurn: (winnerTurn) => set({ winnerTurn }),
+  setComboWinner: (comboWinner) => set({ comboWinner }),
+  setScoreBoard: (scoreBoard) => set({ scoreBoard }),
+  setTie: (tie) => set({ tie }),
+  setSelectTurn: (selectTurn) => set({ selectTurn }),
   resetGame: () => {
     set({ board: INITIAL_BOARD })
     set({ turn: TURNS.X })
@@ -54,4 +59,4 @@ export const useStore = create(persist((set, get) => ({
     set({ tie: false })
     set({ newGame: true })
   }
-})))
+}))

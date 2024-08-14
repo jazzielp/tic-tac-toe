@@ -16,6 +16,10 @@ export function Board () {
   const setBoard = useStore((state) => state.setBoard)
   const setTurn = useStore((state) => state.setTurn)
   const setWinner = useStore((state) => state.setWinner)
+  const setWinnerTurn = useStore((state) => state.setWinnerTurn)
+  const setComboWinner = useStore((state) => state.setComboWinner)
+  const setScoreBoard = useStore((state) => state.setScoreBoard)
+  const setTie = useStore((state) => state.setTie)
 
   const clickSquare = (index) => {
     if (board[index] || winner) return null
@@ -36,9 +40,7 @@ export function Board () {
             hasWinner = true
             setWinner(!winner)
             setWinnerTurn(turn)
-            saveInLocalStorage({ name: 'winnerTurn', value: turn })
             setComboWinner(comboWinner)
-            saveInLocalStorage({ name: 'comboWinner', value: comboWinner })
             const newScore = structuredClone(scoreBoard)
             if (turn === TURNS.X) {
               newScore.X.score += 1

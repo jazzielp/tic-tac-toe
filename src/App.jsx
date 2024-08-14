@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { TURNS, INITIAL_SCORE, INITIAL_BOARD, VS_PLAYER } from '../src/const/const'
 import { Header } from './components/Header/Header'
 import { Board } from './components/Board/Board'
 import { ModalWinner } from './components/ModalWinner/ModalWinner'
@@ -21,27 +19,13 @@ function App () {
         {
           newGame
             ? <NewGame />
-            : <>
-              <Header />
-              <Board
-                turn={turn}
-                board={board}
-                scoreBoard={scoreBoard}
-                setBoard={setBoard}
-                setTurn={setTurn}
-                winner={winner}
-                setWinner={setWinner}
-                setWinnerTurn={setWinnerTurn}
-                comboWinner={comboWinner}
-                setComboWinner={setComboWinner}
-                winnerTurn={winnerTurn}
-                setScoreBoard={setScoreBoard}
-                tie={tie}
-                setTie={setTie}
-                saveInLocalStorage={saveInLocalStorage}
-              />
-            </>
+            : (
+              <>
+                <Header />
+                <Board />
+              </>
 
+              )
         }
       </main>
     </>

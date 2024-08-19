@@ -1,10 +1,12 @@
 import React from 'react'
 import './ResetButton.css'
 import iconRestart from '../../assets/icon-restart.svg'
+import { useStore } from '../../stores/store'
 
-export function ResetButton ({ resetGame }) {
+export function ResetButton () {
+  const setIsResetGame = useStore((state) => state.setIsResetGame)
   const handleClick = () => {
-    resetGame()
+    setIsResetGame(true)
   }
   return (
     <div className='button-content'>

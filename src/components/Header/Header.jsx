@@ -6,12 +6,11 @@ import { useStore } from '../../stores/store'
 
 export function Header () {
   const turn = useStore((state) => state.turn)
-  const resetGame = useStore((state) => state.resetGame)
   return (
     <header className='header'>
       <IconGame />
       <Turn turn={turn} />
-      <ResetButton resetGame={resetGame} />
+      <ResetButton />
     </header>
   )
 }

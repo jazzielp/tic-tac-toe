@@ -12,6 +12,7 @@ export const useStore = create((set, get) => ({
   winnerTurn: null,
   tie: false,
   selectTurn: TURNS.X,
+  isResetGame: false,
   setBoard: (board) => set({ board }),
   setTurn: (turn) => set({ turn }),
   setWinner: (winner) => set({ winner }),
@@ -20,6 +21,7 @@ export const useStore = create((set, get) => ({
   setScoreBoard: (scoreBoard) => set({ scoreBoard }),
   setTie: (tie) => set({ tie }),
   setSelectTurn: (selectTurn) => set({ selectTurn }),
+  setIsResetGame: (isResetGame) => set({ isResetGame }),
   resetGame: () => {
     set({ board: INITIAL_BOARD })
     set({ turn: TURNS.X })
@@ -27,6 +29,7 @@ export const useStore = create((set, get) => ({
     set({ comboWinner: [] })
     set({ winner: false })
     set({ winnerTurn: null })
+    set({ isResetGame: false })
   },
   nextRound: () => {
     set({ winner: false })

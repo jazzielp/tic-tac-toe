@@ -1,8 +1,9 @@
 import { create } from 'zustand'
-// import { persist } from 'zustand/middleware'
+import { persist } from 'zustand/middleware'
 import { TURNS, INITIAL_SCORE, INITIAL_BOARD, VS_PLAYER } from '../const/const'
 
-export const useStore = create((set, get) => ({
+/* eslint-disable no-undef */
+export const useStore = create(persist((set, get) => ({
   board: INITIAL_BOARD,
   turn: TURNS.X,
   scoreBoard: INITIAL_SCORE,
@@ -61,5 +62,12 @@ export const useStore = create((set, get) => ({
     set({ turn: TURNS.X })
     set({ tie: false })
     set({ newGame: true })
+  },
+  cancelResetGame: () => {
+    set({ isResetGame: false })
   }
+}),
+{
+  name: 'tic-tac-toe',
+  getStorage: () => localStorage
 }))

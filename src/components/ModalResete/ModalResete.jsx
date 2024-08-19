@@ -6,6 +6,7 @@ import { useStore } from '../../stores/store'
 
 export function ModalResete () {
   const resetGame = useStore((state) => state.resetGame)
+  const cancelResetGame = useStore((state) => state.cancelResetGame)
 
   return (
     <Modal>
@@ -13,7 +14,7 @@ export function ModalResete () {
         RESTART GAME?
       </h2>
       <div className='modal-win__buttons'>
-        <SmallButton colorButton='gray'>NO, CANCEL</SmallButton>
+        <SmallButton colorButton='gray' action={cancelResetGame}>NO, CANCEL</SmallButton>
         <SmallButton colorButton='yellow' action={resetGame}>YES, RESTART</SmallButton>
       </div>
     </Modal>

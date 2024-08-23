@@ -31,7 +31,6 @@ export const useStore = create(persist((set, get) => ({
   resetGame: () => {
     set({ board: INITIAL_BOARD })
     set({ turn: TURNS.X })
-    set({ scoreBoard: INITIAL_SCORE })
     set({ comboWinner: [] })
     set({ winner: false })
     set({ winnerTurn: null })

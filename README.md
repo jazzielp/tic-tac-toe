@@ -22,7 +22,7 @@ Your users should be able to:
 - See hover states for all interactive elements on the page
 - Play the game either solo vs the computer or multiplayer against another person
 - **Bonus 1**: Save the game state in the browser so that it’s preserved if the player refreshes their browser
-- **Bonus 2**: Instead of having the computer randomly make their moves, try making it clever so it’s proactive in blocking your moves and trying to win
+- **Bonus 2**: Instead of having the computer randomly make its moves, try making it clever so it’s proactive in blocking your moves and trying to win
 
 ### Expected behaviour
 
@@ -32,7 +32,7 @@ Your users should be able to:
 - After a round, if the player chooses to quit the game, they should be taken back to the new game menu.
 - If the restart icon in the top right is clicked, the "Restart game?" modal should show and allow the player to reset the game or cancel and continue to play.
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
 
 ## Where to find everything
 
@@ -55,7 +55,7 @@ Feel free to use any workflow that you feel comfortable with. Below is a suggest
 
 ## Deploying your project
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
 
 - [GitHub Pages](https://pages.github.com/)
 - [Vercel](https://vercel.com/)
@@ -83,7 +83,7 @@ Remember, if you're looking for feedback on your solution, be sure to ask questi
 
 There are multiple places you can share your solution:
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
+1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
 2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
 3. Share your solution on other social channels like LinkedIn.
 4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).

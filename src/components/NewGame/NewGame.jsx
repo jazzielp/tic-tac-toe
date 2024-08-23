@@ -14,9 +14,17 @@ export function NewGame () {
   const selectTurn = useStore((state) => state.selectTurn)
   const setSelectTurn = useStore((state) => state.setSelectTurn)
   const selectGame = useStore((state) => state.selectGame)
+  const setPlayer1 = useStore((state) => state.setPlayer1)
+  const setPlayer2 = useStore((state) => state.setPlayer2)
 
   const handleTurnClick = ({ turn }) => {
     setSelectTurn(turn)
+    setPlayer1(turn)
+    if (turn === TURNS.O) {
+      setPlayer2(TURNS.X)
+    } else {
+      setPlayer2(TURNS.O)
+    }
   }
 
   return (

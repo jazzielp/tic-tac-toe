@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Board.css'
 import { Square } from '../Square/Square'
 import { SquareScore } from '../SquareScore/SquareScore'
-import { TURNS, WINNING_COMBINATIONS } from '../../const/const'
+import { TURNS, WINNING_COMBINATIONS, VS_PLAYER } from '../../const/const'
 import { useStore } from '../../stores/store'
+import { gameCPU } from '../../utils/gameCPU'
 
 export function Board () {
   const turn = useStore((state) => state.turn)
@@ -12,6 +13,9 @@ export function Board () {
   const winner = useStore((state) => state.winner)
   const comboWinner = useStore((state) => state.comboWinner)
   const winnerTurn = useStore((state) => state.winnerTurn)
+  const player1 = useStore((state) => state.player1)
+  const player2 = useStore((state) => state.player2)
+  const vsPlayer = useStore((state) => state.vsPayer)
 
   const setBoard = useStore((state) => state.setBoard)
   const setTurn = useStore((state) => state.setTurn)
@@ -20,6 +24,17 @@ export function Board () {
   const setComboWinner = useStore((state) => state.setComboWinner)
   const setScoreBoard = useStore((state) => state.setScoreBoard)
   const setTie = useStore((state) => state.setTie)
+
+  useEffect(() => {
+    if (player2 === turn && vsPlayer === VS_PLAYER.CPU) {
+      setTimeout(() => {
+        const moveCPU = gameCPU(board, player2, player1)
+        if (moveCPU !== null) {
+          clickSquare(moveCPU)
+        }
+      }, 500)
+    }
+  }, [turn])
 
   const clickSquare = (index) => {
     if (board[index] || winner) return null
@@ -74,7 +89,6 @@ export function Board () {
       <SquareScore title={`X (${scoreBoard.X.name})`} score={scoreBoard.X.score} type='P1' />
       <SquareScore title='TIES' score={scoreBoard.TIES} type='TIES' />
       <SquareScore title={`O (${scoreBoard.O.name})`} score={scoreBoard.O.score} type='P2' />
-      <p>{winner}</p>
     </section>
   )
 }

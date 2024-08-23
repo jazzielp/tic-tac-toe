@@ -7,6 +7,9 @@ export const useStore = create(persist((set, get) => ({
   board: INITIAL_BOARD,
   turn: TURNS.X,
   scoreBoard: INITIAL_SCORE,
+  vsPayer: null,
+  player1: TURNS.X,
+  player2: TURNS.O,
   newGame: true,
   comboWinner: [],
   winner: false,
@@ -23,6 +26,8 @@ export const useStore = create(persist((set, get) => ({
   setTie: (tie) => set({ tie }),
   setSelectTurn: (selectTurn) => set({ selectTurn }),
   setIsResetGame: (isResetGame) => set({ isResetGame }),
+  setPlayer1: (player1) => set({ player1 }),
+  setPlayer2: (player2) => set({ player2 }),
   resetGame: () => {
     set({ board: INITIAL_BOARD })
     set({ turn: TURNS.X })
@@ -51,6 +56,7 @@ export const useStore = create(persist((set, get) => ({
       newScore.X.name = value === VS_PLAYER.CPU ? VS_PLAYER.CPU : VS_PLAYER.P2
       newScore.O.name = value === VS_PLAYER.CPU ? VS_PLAYER.YOU : VS_PLAYER.P1
     }
+    set({ vsPayer: value })
     set({ scoreBoard: newScore })
   },
   quitGame: () => {
@@ -66,8 +72,7 @@ export const useStore = create(persist((set, get) => ({
   cancelResetGame: () => {
     set({ isResetGame: false })
   }
-}),
-{
+}), {
   name: 'tic-tac-toe',
   getStorage: () => localStorage
 }))
